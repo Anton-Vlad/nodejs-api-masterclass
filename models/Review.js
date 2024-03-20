@@ -65,9 +65,8 @@ ReviewSchema.post("save", function () {
 });
 
 // Call getAverageCost before remove -- Not working at the moment
-ReviewSchema.pre("deleteOne", { document: true }, function (next) {
+ReviewSchema.post("deleteOne", { document: true }, function () {
   this.constructor.getAverageRating(this.bootcamp);
-  next();
 });
 
 module.exports = mongoose.model("Review", ReviewSchema);
