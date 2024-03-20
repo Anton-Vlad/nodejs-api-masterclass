@@ -68,3 +68,63 @@ exports.addReview = asyncHandler(async (req, res, next) => {
     data: review,
   });
 });
+
+// @desc    Update review
+// @route   PUT /api/v1/reviews/:id
+// @access  Private
+exports.updateReview = asyncHandler(async (req, res, next) => {
+  let review = await Review.findById(req.params.id);
+
+  if (!review) {
+    return next(
+      new ErrorResponse(`No review with the id of ${req.params.id}`, 404)
+    );
+  }
+
+  // Make sure the review belongs to the user, or user is admin
+  if (review.user.toString() !== req.user.id && req.user.role !== "admin") {
+    return next(
+      new ErrorResponse(`Not authorized to update review ${req.params.id}`, 401)
+    );
+  }
+
+  // Update the review
+  for (let prop in req.body) {
+    review[prop] = req.body[prop];
+  }
+
+  // Save the review, triggering the 'save' middleware
+  review = await review.save();
+
+  res.status(200).json({
+    success: true,
+    data: review,
+  });
+});
+
+// @desc    Delete review
+// @route   DELETE /api/v1/reviews/:id
+// @access  Private
+exports.deleteReview = asyncHandler(async (req, res, next) => {
+  const review = await Review.findById(req.params.id);
+
+  if (!review) {
+    return next(
+      new ErrorResponse(`No review with the id of ${req.params.id}`, 404)
+    );
+  }
+
+  // Make sure the review belongs to the user, or user is admin
+  if (review.user.toString() !== req.user.id && req.user.role !== "admin") {
+    return next(
+      new ErrorResponse(`Not authorized to update review ${req.params.id}`, 401)
+    );
+  }
+
+  await review.deleteOne();
+
+  res.status(200).json({
+    success: true,
+    data: {},
+  });
+});
