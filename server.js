@@ -2,9 +2,12 @@ const express = require("express");
 const dotenv = require("dotenv");
 // const logger = require("./middleware/logger");
 const morgan = require("morgan");
-const mongoSanitize = require('express-mongo-sanitize');
-const helmet = require('helmet');
-const xss = require('xss-clean');
+const mongoSanitize = require("express-mongo-sanitize");
+const helmet = require("helmet");
+const xss = require("xss-clean");
+const rateLimit = require("express-rate-limit");
+const hpp = require("hpp");
+const cors = require("cors");
 const path = require("path");
 const colors = require("colors");
 const fileUpload = require("express-fileupload");
@@ -42,6 +45,19 @@ app.use(helmet());
 
 // Prevent XSS attack
 app.use(xss());
+
+// Rate Limiting - Max 100req / 10min
+const limiter = rateLimit({
+  windowMs: 10 * 60 * 1000, // 10 min
+  max: 100,
+});
+app.use(limiter);
+
+// Prevent http param pollution
+app.use(hpp());
+
+// Enable CORS - its a public api
+app.use(cors());
 
 // Set static folder
 app.use(express.static(path.join(__dirname, "public")));
