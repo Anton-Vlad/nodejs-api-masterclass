@@ -1,0 +1,781 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "MasterClass Node API",
+    "dateExported": "2024-03-23T10:02:06.097Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "21c1050f-1213-4870-8f21-c7ad08f5d148",
+            "name": "Bootcamps V1",
+            "containerId": "",
+            "created": "2024-02-29T20:31:43.026Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "455872b7-48a6-4ce4-a26b-4ee8d4a8195f",
+            "name": "Courses V1",
+            "containerId": "",
+            "created": "2024-03-13T20:47:13.447Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "9b115ae2-71e5-40b4-aece-749d69d80bc8",
+            "name": "Authentication V1",
+            "containerId": "",
+            "created": "2024-03-14T20:09:03.081Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "21feb74c-4ccb-429d-a7c7-d890e0d99f6d",
+            "name": "Users V1",
+            "containerId": "",
+            "created": "2024-03-18T21:50:19.572Z",
+            "sortNum": 40000,
+            "settings": {
+                "docs": "CRUD functionality to users only available to admins"
+            }
+        },
+        {
+            "_id": "1586e554-c01d-439b-8680-46a25ee92bb6",
+            "name": "Reviews V1",
+            "containerId": "",
+            "created": "2024-03-20T19:29:20.836Z",
+            "sortNum": 50000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "c21626a9-0299-4ca2-b921-f7bbbc23cf55",
+            "colId": "bc281a5b-496e-4f19-b44b-b1b94ee7939f",
+            "containerId": "21c1050f-1213-4870-8f21-c7ad08f5d148",
+            "name": "All Bootcamps",
+            "url": "/v1/bootcamps",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-02-29T20:19:29.606Z",
+            "modified": "2024-03-20T20:07:57.102Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "105ce0f9-d8b0-48f8-80ff-0134c152bcd7",
+            "colId": "bc281a5b-496e-4f19-b44b-b1b94ee7939f",
+            "containerId": "21c1050f-1213-4870-8f21-c7ad08f5d148",
+            "name": "New Bootcamps",
+            "url": "/v1/bootcamps",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-02-29T20:30:13.551Z",
+            "modified": "2024-03-20T20:07:17.592Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZjM1YzZjMzYxNWI1Y2Y2N2M5Nzk1ZSIsImlhdCI6MTcxMDYwMDI4MiwiZXhwIjoxNzEwNjg2NjgyfQ.ORnqZ7T0gfvN6VU1ZNV8Rh34CASXRKI4-Drnnu8wXQY"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "\t{\n\t\t\"name\": \"ModernTech Bootcamp\",\n\t\t\"description\": \"ModernTech has one goal, and that is to make you a rockstar developer and/or designer with a six figure salary. We teach both development and UI/UX\",\n\t\t\"website\": \"https://moderntech.com\",\n\t\t\"phone\": \"(222) 222-2222\",\n\t\t\"email\": \"enroll@moderntech.com\",\n\t\t\"address\": \"220 Pawtucket St, Lowell, MA 01854\",\n\t\t\"careers\": [\"Web Development\", \"UI/UX\", \"Mobile Development\"],\n\t\t\"housing\": false,\n\t\t\"jobAssistance\": true,\n\t\t\"jobGuarantee\": false,\n\t\t\"acceptGi\": true\n\t}",
+                "form": []
+            },
+            "reqType": "post",
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "113a397c-49cf-43da-a6dc-778e1d747ac4",
+            "colId": "bc281a5b-496e-4f19-b44b-b1b94ee7939f",
+            "containerId": "21c1050f-1213-4870-8f21-c7ad08f5d148",
+            "name": "Single Bootcamp",
+            "url": "/v1/bootcamps/65fb41f4aafae5fff867fc19",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-02-29T20:30:36.187Z",
+            "modified": "2024-03-20T20:22:54.133Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "ed9c5ab7-e891-42e9-956c-fc53ee9ef711",
+            "colId": "bc281a5b-496e-4f19-b44b-b1b94ee7939f",
+            "containerId": "21c1050f-1213-4870-8f21-c7ad08f5d148",
+            "name": "Update Bootcamp",
+            "url": "/v1/bootcamps/65f8a0e4a0caec11066690aa",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-02-29T20:31:04.910Z",
+            "modified": "2024-03-18T20:25:06.467Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"housing\": true\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "969877d4-ba7c-440b-9147-ce9fccc1cbdb",
+            "colId": "bc281a5b-496e-4f19-b44b-b1b94ee7939f",
+            "containerId": "21c1050f-1213-4870-8f21-c7ad08f5d148",
+            "name": "Delete Bootcamp",
+            "url": "/v1/bootcamps/65f8a139a0caec11066690b0",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2024-02-29T20:31:59.650Z",
+            "modified": "2024-03-18T20:17:54.838Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "b47fc5f1-4324-464f-a782-2b658510045b",
+            "colId": "bc281a5b-496e-4f19-b44b-b1b94ee7939f",
+            "containerId": "21c1050f-1213-4870-8f21-c7ad08f5d148",
+            "name": "Get within Radius",
+            "url": "/v1/bootcamps/radius/02118/30",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-03-12T21:17:56.013Z",
+            "modified": "2024-03-12T21:20:17.095Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "0e227858-00b0-432d-bb90-9836d6915388",
+            "colId": "bc281a5b-496e-4f19-b44b-b1b94ee7939f",
+            "containerId": "455872b7-48a6-4ce4-a26b-4ee8d4a8195f",
+            "name": "All Courses",
+            "url": "/v1/courses?select=title&page=2&limit=2",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-03-13T20:47:21.415Z",
+            "modified": "2024-03-14T19:56:32.260Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "select",
+                    "value": "title",
+                    "isPath": false
+                },
+                {
+                    "name": "page",
+                    "value": "2",
+                    "isPath": false
+                },
+                {
+                    "name": "limit",
+                    "value": "2",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "7017bdb8-9ece-4581-9a93-ca9e088b5025",
+            "colId": "bc281a5b-496e-4f19-b44b-b1b94ee7939f",
+            "containerId": "455872b7-48a6-4ce4-a26b-4ee8d4a8195f",
+            "name": "For a Bootcamp",
+            "url": "/v1/bootcamps/5d725a037b292f5f8ceff787/courses",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2024-03-13T20:49:29.591Z",
+            "modified": "2024-03-13T21:38:55.094Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ac6f1c07-2a78-4b91-beda-9801699c15b0",
+            "colId": "bc281a5b-496e-4f19-b44b-b1b94ee7939f",
+            "containerId": "455872b7-48a6-4ce4-a26b-4ee8d4a8195f",
+            "name": "Single Course",
+            "url": "/v1/courses/5d725cb9c4ded7bcb480eaa1",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2024-03-13T21:29:02.539Z",
+            "modified": "2024-03-13T21:29:59.754Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "94efeaee-8393-425a-853e-f515b7d09532",
+            "colId": "bc281a5b-496e-4f19-b44b-b1b94ee7939f",
+            "containerId": "455872b7-48a6-4ce4-a26b-4ee8d4a8195f",
+            "name": "New Course",
+            "url": "/v1/bootcamps/65f8a4dd50a4c6b284651d96/courses",
+            "method": "POST",
+            "sortNum": 100000,
+            "created": "2024-03-13T21:34:51.720Z",
+            "modified": "2024-03-18T20:33:24.080Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"title\": \"213 Front End Web Development\",\n\t\t\"description\": \"This course will provide you with all of the essentials to become a successful frontend web developer. You will learn to master HTML, CSS and front end JavaScript, along with tools like Git, VSCode and front end frameworks like Vue\",\n\t\t\"weeks\": 8,\n\t\t\"tuition\": 16000,\n\t\t\"minimumSkill\": \"beginner\",\n\t\t\"scholarhipsAvailable\": true\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "10263278-6fc5-4fbc-9018-a90d1dfccb87",
+            "colId": "bc281a5b-496e-4f19-b44b-b1b94ee7939f",
+            "containerId": "455872b7-48a6-4ce4-a26b-4ee8d4a8195f",
+            "name": "Update Course",
+            "url": "/v1/courses/65f8a4fb50a4c6b284651d9a",
+            "method": "PUT",
+            "sortNum": 110000,
+            "created": "2024-03-14T18:43:42.745Z",
+            "modified": "2024-03-18T20:35:17.339Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"tuition\": 13000,\n  \"minimumSkill\": \"advanced\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "f971e222-6f35-40dc-baed-76f0a184bfd4",
+            "colId": "bc281a5b-496e-4f19-b44b-b1b94ee7939f",
+            "containerId": "455872b7-48a6-4ce4-a26b-4ee8d4a8195f",
+            "name": "Delete Course",
+            "url": "/v1/courses/65f8a4fb50a4c6b284651d9a",
+            "method": "DELETE",
+            "sortNum": 120000,
+            "created": "2024-03-14T18:46:36.634Z",
+            "modified": "2024-03-18T20:35:23.895Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "fe652abc-ae59-4607-abb8-cc2c00f9f0c6",
+            "colId": "bc281a5b-496e-4f19-b44b-b1b94ee7939f",
+            "containerId": "21c1050f-1213-4870-8f21-c7ad08f5d148",
+            "name": "Upload Photo",
+            "url": "/v1/bootcamps/5d725a1b7b292f5f8ceff788/photo",
+            "method": "PUT",
+            "sortNum": 130000,
+            "created": "2024-03-14T19:15:53.055Z",
+            "modified": "2024-03-16T15:13:51.912Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [],
+                "files": [
+                    {
+                        "name": "file",
+                        "value": "/home/vlad/photos/BallomMasterofDeath.jpg"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "284f938b-1b06-4803-9c67-d5186c7d78f4",
+            "colId": "bc281a5b-496e-4f19-b44b-b1b94ee7939f",
+            "containerId": "9b115ae2-71e5-40b4-aece-749d69d80bc8",
+            "name": "Register",
+            "url": "/v1/auth/register",
+            "method": "POST",
+            "sortNum": 140000,
+            "created": "2024-03-14T20:09:27.354Z",
+            "modified": "2024-03-20T20:06:32.977Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Mery Snow\",\n  \"email\": \"mery@snow.com\",\n  \"password\": \"123456\",\n  \"role\": \"user\"\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": [
+                {
+                    "type": "set-env-var",
+                    "custom": "json.token",
+                    "action": "setto",
+                    "value": "{{token}}"
+                }
+            ]
+        },
+        {
+            "_id": "f045a451-3a7e-4858-8902-b46c70574622",
+            "colId": "bc281a5b-496e-4f19-b44b-b1b94ee7939f",
+            "containerId": "9b115ae2-71e5-40b4-aece-749d69d80bc8",
+            "name": "Login",
+            "url": "/v1/auth/login",
+            "method": "POST",
+            "sortNum": 150000,
+            "created": "2024-03-16T14:19:52.366Z",
+            "modified": "2024-03-23T09:44:13.713Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"jack@snow.com\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": [
+                {
+                    "type": "set-env-var",
+                    "custom": "json.token",
+                    "action": "setto",
+                    "value": "{{token}}"
+                }
+            ],
+            "postReq": {
+                "inlineScripts": [
+                    {
+                        "script": [
+                            "pm.environment.set(\"TOKEN\", pm.response.json().token)"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "355e1e8c-72d4-47f1-b4bb-2f765b0ecfbf",
+            "colId": "bc281a5b-496e-4f19-b44b-b1b94ee7939f",
+            "containerId": "9b115ae2-71e5-40b4-aece-749d69d80bc8",
+            "name": "Me",
+            "url": "/v1/auth/me",
+            "method": "GET",
+            "sortNum": 160000,
+            "created": "2024-03-16T14:48:29.729Z",
+            "modified": "2024-03-23T09:32:51.798Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "cb0a31ae-014c-43f3-8e04-e069275b0b41",
+            "colId": "bc281a5b-496e-4f19-b44b-b1b94ee7939f",
+            "containerId": "9b115ae2-71e5-40b4-aece-749d69d80bc8",
+            "name": "Logout",
+            "url": "/v1/auth/logout",
+            "method": "GET",
+            "sortNum": 165000,
+            "created": "2024-03-23T09:28:27.403Z",
+            "modified": "2024-03-23T09:28:36.702Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "80aba5f4-f49c-4f2c-b048-54156b4f1c90",
+            "colId": "bc281a5b-496e-4f19-b44b-b1b94ee7939f",
+            "containerId": "9b115ae2-71e5-40b4-aece-749d69d80bc8",
+            "name": "Forgot Password",
+            "url": "/v1/auth/forgotpassword",
+            "method": "POST",
+            "sortNum": 170000,
+            "created": "2024-03-18T20:45:49.355Z",
+            "modified": "2024-03-18T20:46:59.717Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"john@gmail.com\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "4d620cb1-b1a9-4d9f-a7e5-d352e3eadc21",
+            "colId": "bc281a5b-496e-4f19-b44b-b1b94ee7939f",
+            "containerId": "9b115ae2-71e5-40b4-aece-749d69d80bc8",
+            "name": "Reset Password",
+            "url": "/v1/auth/resetpassword/b2d9a41b3d4e83b16df140fc48ac06c91e5cc281",
+            "method": "PUT",
+            "sortNum": 180000,
+            "created": "2024-03-18T21:20:11.660Z",
+            "modified": "2024-03-18T21:24:48.145Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"password\": \"gigel123\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "set-env-var",
+                    "custom": "json.token",
+                    "action": "setto",
+                    "value": "{{token}}"
+                }
+            ]
+        },
+        {
+            "_id": "36768eec-ac4a-432b-9269-9d7134ee45b1",
+            "colId": "bc281a5b-496e-4f19-b44b-b1b94ee7939f",
+            "containerId": "9b115ae2-71e5-40b4-aece-749d69d80bc8",
+            "name": "Update Details",
+            "url": "/v1/auth/updatedetails",
+            "method": "PUT",
+            "sortNum": 190000,
+            "created": "2024-03-18T21:29:56.257Z",
+            "modified": "2024-03-18T21:31:52.788Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"john@gmail.com\",\n  \"name\": \"John Doe\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "780c1f47-a1fe-44b7-8b88-ebfb838a60eb",
+            "colId": "bc281a5b-496e-4f19-b44b-b1b94ee7939f",
+            "containerId": "9b115ae2-71e5-40b4-aece-749d69d80bc8",
+            "name": "Update Password",
+            "url": "/v1/auth/updatepassword",
+            "method": "PUT",
+            "sortNum": 200000,
+            "created": "2024-03-18T21:35:23.462Z",
+            "modified": "2024-03-18T21:37:37.486Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"currentPassword\": \"123456\",\n  \"newPassword\": \"12345678\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": [
+                {
+                    "type": "set-env-var",
+                    "custom": "json.token",
+                    "action": "setto",
+                    "value": "{{token}}"
+                }
+            ]
+        },
+        {
+            "_id": "de9dd1ac-30bb-49b9-97c3-f482ad761e83",
+            "colId": "bc281a5b-496e-4f19-b44b-b1b94ee7939f",
+            "containerId": "21feb74c-4ccb-429d-a7c7-d890e0d99f6d",
+            "name": "All Users",
+            "url": "/v1/users",
+            "method": "GET",
+            "sortNum": 210000,
+            "created": "2024-03-18T21:50:50.188Z",
+            "modified": "2024-03-18T21:52:38.844Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "88d60fe0-9ff6-4e4c-9e57-cd635b0e97e8",
+            "colId": "bc281a5b-496e-4f19-b44b-b1b94ee7939f",
+            "containerId": "21feb74c-4ccb-429d-a7c7-d890e0d99f6d",
+            "name": "Single User",
+            "url": "/v1/users/5c8a1d5b0190b214360dc032",
+            "method": "GET",
+            "sortNum": 220000,
+            "created": "2024-03-18T21:53:52.476Z",
+            "modified": "2024-03-18T21:54:14.532Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "85d0537f-995d-4e67-ab71-a67f12cd8029",
+            "colId": "bc281a5b-496e-4f19-b44b-b1b94ee7939f",
+            "containerId": "21feb74c-4ccb-429d-a7c7-d890e0d99f6d",
+            "name": "Create User",
+            "url": "/v1/users",
+            "method": "POST",
+            "sortNum": 230000,
+            "created": "2024-03-18T21:54:31.886Z",
+            "modified": "2024-03-18T21:55:30.257Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Nate Smith\",\n  \"email\": \"nate@gmail.com\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "4d098f49-b430-469b-bcd7-49b9b6891700",
+            "colId": "bc281a5b-496e-4f19-b44b-b1b94ee7939f",
+            "containerId": "21feb74c-4ccb-429d-a7c7-d890e0d99f6d",
+            "name": "Update User",
+            "url": "/v1/users/65f8b851328c21465bf8237a",
+            "method": "PUT",
+            "sortNum": 240000,
+            "created": "2024-03-18T21:56:18.308Z",
+            "modified": "2024-03-18T21:57:16.498Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Nate Johnson\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "c94d19a8-7bab-406c-8fc7-c303c6b156ed",
+            "colId": "bc281a5b-496e-4f19-b44b-b1b94ee7939f",
+            "containerId": "21feb74c-4ccb-429d-a7c7-d890e0d99f6d",
+            "name": "Delete User",
+            "url": "/v1/users/65f8b851328c21465bf8237a",
+            "method": "DELETE",
+            "sortNum": 250000,
+            "created": "2024-03-18T21:57:35.228Z",
+            "modified": "2024-03-18T21:57:52.123Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "7c83e163-f920-4c57-bbf5-12862855fd5e",
+            "colId": "bc281a5b-496e-4f19-b44b-b1b94ee7939f",
+            "containerId": "1586e554-c01d-439b-8680-46a25ee92bb6",
+            "name": "All Reviews",
+            "url": "/v1/reviews",
+            "method": "GET",
+            "sortNum": 260000,
+            "created": "2024-03-20T19:29:32.848Z",
+            "modified": "2024-03-20T19:29:50.377Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "9bc60521-1faf-47c8-af16-50a0e1078bbe",
+            "colId": "bc281a5b-496e-4f19-b44b-b1b94ee7939f",
+            "containerId": "1586e554-c01d-439b-8680-46a25ee92bb6",
+            "name": "Reviews for a Bootcamp",
+            "url": "/v1/bootcamps/65fb41f4aafae5fff867fc19/reviews",
+            "method": "GET",
+            "sortNum": 270000,
+            "created": "2024-03-20T19:31:10.587Z",
+            "modified": "2024-03-20T20:26:32.562Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "7d1713e4-7635-4aab-b975-8d84755778bb",
+            "colId": "bc281a5b-496e-4f19-b44b-b1b94ee7939f",
+            "containerId": "1586e554-c01d-439b-8680-46a25ee92bb6",
+            "name": "One Review",
+            "url": "/v1/reviews/5d7a514b5d2c12c7449be020",
+            "method": "GET",
+            "sortNum": 280000,
+            "created": "2024-03-20T19:44:54.723Z",
+            "modified": "2024-03-20T19:50:25.813Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "2579bf64-4c05-4d04-b519-36e7957d2385",
+            "colId": "bc281a5b-496e-4f19-b44b-b1b94ee7939f",
+            "containerId": "1586e554-c01d-439b-8680-46a25ee92bb6",
+            "name": "Add Review",
+            "url": "/v1/bootcamps/65fb41f4aafae5fff867fc19/reviews",
+            "method": "POST",
+            "sortNum": 290000,
+            "created": "2024-03-20T19:57:00.316Z",
+            "modified": "2024-03-20T20:35:32.173Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"999 Cool bootcamp!\",\n  \"text\": \"gdrg rI lerned sometings!\",\n  \"rating\": 7\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "1a76564b-b9c8-42c8-9f2f-5f67ae4a2da5",
+            "colId": "bc281a5b-496e-4f19-b44b-b1b94ee7939f",
+            "containerId": "1586e554-c01d-439b-8680-46a25ee92bb6",
+            "name": "Update Review",
+            "url": "/v1/reviews/65fb422aaafae5fff867fc23",
+            "method": "PUT",
+            "sortNum": 300000,
+            "created": "2024-03-20T20:16:49.421Z",
+            "modified": "2024-03-20T20:23:50.362Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"rating\": 4\n}",
+                "form": []
+            },
+            "reqType": "put",
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "172c110e-b68b-4823-85c1-712fb4b69460",
+            "colId": "bc281a5b-496e-4f19-b44b-b1b94ee7939f",
+            "containerId": "1586e554-c01d-439b-8680-46a25ee92bb6",
+            "name": "Delete Review",
+            "url": "/v1/reviews/65fb4893b2d1e8a9fdb0f358",
+            "method": "DELETE",
+            "sortNum": 310000,
+            "created": "2024-03-20T20:25:12.426Z",
+            "modified": "2024-03-20T20:35:51.832Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        }
+    ],
+    "settings": {
+        "options": {
+            "baseUrl": "http://localhost:5000/api"
+        },
+        "envId": "9cfec5fe-4e9e-4fa4-9049-4587141a2457"
+    }
+}
